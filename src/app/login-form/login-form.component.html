@@ -1,0 +1,37 @@
+<div id="custom-margin">
+  <div class="container mt-5 p-3 bg-warning w-25" >
+    <form [formGroup]="logInForm" (ngSubmit)="logIn()">
+      <div class="mb-3">
+        <label for="userName" class="form-label">UserName</label>
+        <input type="text" class="form-control" name="userName" id="userName" formControlName="userName">
+
+        <div class="row" *ngIf="userName?.touched && userName?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="userName?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email" formControlName="email" >
+
+        <div class="row" *ngIf="email?.touched && email?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="email?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" name="password" id="password" formControlName="password" >
+
+        <div class="row" *ngIf="password?.touched && password?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="password?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2" (click)="verifyUser()">LogIn</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
